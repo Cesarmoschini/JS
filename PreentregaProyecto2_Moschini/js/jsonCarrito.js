@@ -7,8 +7,8 @@ function validarStorageCarrito(){
         return storageProductos;
     }else{
         return [];
-    }
-}
+    };
+};
 
 
 function validarStoragePesos(){
@@ -17,8 +17,8 @@ function validarStoragePesos(){
         return storagePesos;
     }else{
         return[];
-    }
-}
+    };
+};
 
 document.getElementById("cantidadAcumulada").innerHTML = carro.length;
 document.getElementById("totalPesosAcumulados").innerHTML = totalPesos;

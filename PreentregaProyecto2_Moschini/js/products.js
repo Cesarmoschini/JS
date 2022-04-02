@@ -1,5 +1,5 @@
 /*PRODUCTOS*/
-const carrito = []
+const carrito = [];
 
 const productos = [
     { id: 1, producto: "Café en granos x 5 kg", precio: 4600, stock: 100, imagen: "https://imagenes.20minutos.es/files/image_656_370/uploads/imagenes/2019/10/12/1094538.jpg"},
@@ -46,24 +46,25 @@ function mostrarCardsEnElHTML(cards){
 var totalPesos =0;
 
 comprarProducto(productos);
+
 function comprarProducto(idProducto){
     const valorDeCantidad = document.getElementById(`cantidad-${idProducto}`).value;
     const resultado = productos.find(producto => producto.id === idProducto);
     if (valorDeCantidad != 0){
-
     if(resultado.stock === 0){
-        console.log("No hay stock")
-    }else{
+        console.log("No hay stock");
+        swal("¡Lo siento!", "Las unidades seleccionadas no alcanzan debido a la falta de stock", "error");
         if(resultado.stock - valorDeCantidad > 0){
-            resultado.stock = resultado.stock - valorDeCantidad
-            console.log(`Quedan ${resultado.stock} unidades`) 
+            resultado.stock = resultado.stock - valorDeCantidad;
+            console.log(`Quedan ${resultado.stock} unidades`);
         }else{
-            resultado.stock = 0
-            console.log("No hay stock")
-        }
+            resultado.stock = 0;
+            console.log("No hay stock");
+            swal("¡Lo siento!", "Las unidades seleccionadas no alcanzan debido a la falta de stock", "error");
+        };
     };
-    if(resultado.stock ===0){
 
+    if(resultado.stock ===0){
     }else{
     carrito.push(resultado);
 
@@ -72,12 +73,20 @@ function comprarProducto(idProducto){
     localStorage.setItem("totalCompras", JSON.stringify(totalPesos));
     document.getElementById("totalPesosAcumulados").innerHTML = totalPesos;
     document.getElementById("cantidadAcumulada").innerHTML = carrito.length;
-}
+
+    Toastify({
+        text: `Se agregó un producto al carrito`,
+        offset: {
+            x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        },
+          }).showToast();
+};
 
 }else{
-    console.log("El usuario no ingresó el valor correctamente")
-}
-}
+    console.log("El usuario no ingresó el valor correctamente");
+};
+};
 
 function searchProducts() {
     const nombreProducto = document.getElementById("producto-buscado").value.toUpperCase().trim();
@@ -87,39 +96,6 @@ function searchProducts() {
     });
 
     generarCards(findProducts);
-}
-
-
-/*MOSTRAR PRODUCTOS EN LA PÁGINA SHOPPING-CART.HTML*/
-
-
-/*
-for(const producto of productos){
-    console.log(producto.id);
-    console.log(producto.producto);
 };
 
-const stocks = productos.map((el)=>{
-    return{ id: el.id, 
-        stock: el.stock
-    }
-})
 
-console.log(stocks)
-
-let idProducto = Number(prompt("Ingrese ID del Producto. Valor del 1 al 6"))
-
-function agregarAlCarrito(idProducto){
-        if(idProducto===3){
-            console.log("No hay stock")
-        }else if(idProducto<7){
-            console.log('Producto '+idProducto+' fue comprado')
-        }else{
-            console.log("No existe el ID seleccionado")
-        }
-    }
-
-agregarAlCarrito(idProducto)
-
-const idBuscado = productos.find(producto => producto.id === idProducto)
-console.log(idBuscado)*/

@@ -6,7 +6,7 @@ function enviarForm(){
     var mailForm = document.getElementById("mail").value;
     var comentarioForm = document.getElementById("comentario").value;
     console.log(`Nombre completo: ${apellidoForm.toUpperCase().trim()}, ${nombreForm.trim()}`);
-    console.log(`La edad es de ${edadForm}`)
+    console.log(`La edad es de ${edadForm}`);
     console.log(`Mail: ${mailForm}`);
     console.log(`El comentario hecho es: ${comentarioForm}`);
-}
+};
