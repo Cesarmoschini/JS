@@ -68,24 +68,21 @@
                                     <th>Productos</th>
                                     <th>Cantidad</th>
                                     <th>Total</th>
-                                    <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr id="lista-carrito">
-                                </tr>
+                            <tbody id="lista-carrito">
                             </tbody>
                         </table>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn">
-                                <a href="../shop.html">Continuar comprando</a>
+                                <a onclick="vaciarCarrito()">Vaciar carrito</a>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="continue__btn update__btn">
-                                <a href="#"><i class="fa fa-spinner"></i>Actualizar carrito</a>
+                                <a href="../shop.html">Continuar comprando</a>
                             </div>
                         </div>
                     </div>
@@ -94,8 +91,7 @@
                     <div class="cart__total">
                         <h6>Total carrito</h6>
                         <ul>
-                            <li>Subtotal <span>$ 169.50</span></li>
-                            <li>Total <span>$ 169.50</span></li>
+                            <li>Total <span>$<span id="sumaTotal"></span></span></li>
                         </ul>
                         <a href="#" class="primary-btn">Avanzar con la compra</a>
                     </div>
@@ -135,8 +131,8 @@
 
 
     <!-- CONFIGURACIÓN JS -->
-    <script src="../js/jsonCarrito.js"></script>
     <script src="../js/products.js"></script>
+    <script src="../js/jsonCarrito.js"></script>
 </body>
 
 </html>
