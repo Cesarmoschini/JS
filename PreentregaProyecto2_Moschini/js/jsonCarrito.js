@@ -1,3 +1,4 @@
+
 carrito = validarStorageCarrito();
 totalPesos = validarStoragePesos();
 
@@ -24,6 +25,7 @@ function validarStoragePesos(){
 
 document.getElementById("totalPesosAcumulados").innerHTML = totalPesos;
 
+
 generarCardShop(carrito);
 
 function generarCardShop(productosAMostrarShop){
@@ -37,12 +39,12 @@ function generarCardShop(productosAMostrarShop){
                 <h5>$ ${elementoDelArrayShop.precio} por unidad</h5>
             </div>
             <td class="quantity__item">
-            <div class="quantity">
-                <div class="pro-qty-2">
-                    ${elementoDelArrayShop.cantidad}
+                <div class="quantity">
+                    <div class="pro-qty-2">
+                        ${elementoDelArrayShop.cantidad}
+                    </div>
                 </div>
-            </div>
-        </td>
+            </td>
         </td>
         <td class="cart__price">$ ${elementoDelArrayShop.costo}</td>
     </tr>

@@ -1,14 +1,13 @@
 /*PRODUCTOS*/
 var carrito = []
 const productos = [
-    { id: 1, producto: "Café en granos x 5 kg", precio: 4600, stock: 100, imagen: "img/cafe.png", cantidad: 0, costo: 0},
+    { id: 1, producto: "Café en granos x 5 kg", precio: 4600, stock: 100, imagen: "img/cafe.png", cantidad: 0, costo: 0 },
     { id: 2, producto: "Café en cápsulas x 10 unidades", precio: 1600, stock: 75, imagen: "img/capsulas.png", cantidad: 0, costo: 0 },
     { id: 3, producto: "Tazas por 3 unidades", precio: 1800, stock: 0, imagen: "img/tazas.png", cantidad: 0, costo: 0 },
     { id: 4, producto: "Cafetera premium", precio: 18500, stock: 5, imagen: "img/cafetera.png", cantidad: 0, costo: 0 },
     { id: 5, producto: "Café en cápsulas x 50 unidades", precio: 7000, stock: 18, imagen:"img/capsulas2.png", cantidad: 0, costo: 0 },
     { id: 6, producto: "Tazas por 6 unidades", precio: 3000, stock: 11, imagen: "img/tazas2.png", cantidad: 0, costo: 0 },
 ];
-
 
 
 /*MOSTRAR PRODUCTOS EN LA PÁGINA SHOP.HTML*/
@@ -27,7 +26,7 @@ function generarCards(productosAMostrar){
             <div class="product__item__text">
                 <h6>${elementoDelArray.producto}</h6>
                 <a href="#" class="add-cart" onclick="comprarProducto(${elementoDelArray.id})">+ Agregar al carrito</a>
-                <h5>${elementoDelArray.precio}</h5>
+                <h5>$ ${elementoDelArray.precio}</h5>
                 <input value="1" min="1" id="cantidad-${elementoDelArray.id}" type="number" placeholder="cantidad">
             </div>
         </div>
